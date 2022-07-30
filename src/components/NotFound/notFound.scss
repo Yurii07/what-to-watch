@@ -1,0 +1,76 @@
+$bg-img: url('../../assets/images/nothing_to_see_here_naked_gun.gif');
+
+  .bg-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: $bg-img
+      no-repeat center center fixed;
+    background-size: cover;
+    background-color: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    height: 100vh;
+  }
+  
+  .content {
+    font-family: "Avenir-Next", Avenir, Helvetica, sans-serif;
+    color: #fff;
+    z-index: 2;
+    position: fixed;
+    top: 30%;
+    margin-left: 50px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  
+  h1 {
+    font-size: 160px;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  
+  h2 {
+    margin-top: 0;
+    max-width: 700px;
+    font-size: 30px;
+    width: 90%;
+  }
+  
+  p {
+    text-align: left;
+    padding-bottom: 32px;
+  }
+  
+  .btn {
+    display: inline-block;
+    border: 1px solid #aaa;
+    border-radius: 40px;
+    padding: 15px 30px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .btn:hover {
+    color: #e2e2e2;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .content {
+      text-align: center;
+      margin-left: 0;
+    }
+  
+    .btn {
+      background-color: white;
+      color: #444444;
+      width: 100%;
+    }
+  
+    h1 {
+      font-size: 120px;
+    }
+  }
+  
