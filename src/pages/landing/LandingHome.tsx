@@ -1,7 +1,9 @@
 import { FC } from 'react';
-import Header from './Header/Header'
+
+import Header from 'components/header/Header';
+import SectionPitch from './Pitch/Pitch';
 import Footer from 'components/footer/Footer';
-// import Header from 'components/header/Header';
+
 import styled from 'styled-components';
 import bgimg from '../../assets/images/bg.jpg'
 
@@ -20,10 +22,13 @@ const Wrapper = styled.div`
 
 const LandingHome: FC = () => {
     return (
-        <Wrapper className='wrapper'>
-            <Header />
+        <>
+            <Wrapper className='wrapper'>
+                <Header />
+                <SectionPitch />
+            </Wrapper>
             <Footer />
-        </Wrapper>
+        </>
     )
 }
 export default LandingHome;

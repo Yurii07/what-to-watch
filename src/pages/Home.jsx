@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { useUserAuth } from 'contexts/UserAuthContext';
 import { useAppDispatch } from 'hooks/redux-hooks';
-import { Route, Navigate, Routes, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 
 import { useAuth } from '../hooks/use-auth';
 import { removeUser } from '../store/slices/userSlice';
@@ -10,7 +10,6 @@ import HeroSlide from 'components/hero-slide/HeroSlide';
 import Header from 'components/header/Header';
 import { OutlineButton } from 'components/button/Button';
 import MovieList from 'components/movie-list/Movie-list';
-import { Container } from '@chakra-ui/react';
 
 import { category, movieType, tvType } from '../api/tmdbApi';
 
