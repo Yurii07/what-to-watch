@@ -1,17 +1,21 @@
 import { FC } from 'react';
 import Navigation from 'config/Navigation';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { UserAuthContextProvider } from 'contexts/UserAuthContext';
+import { store } from './store'
+import OfflineMode from 'components/OfflineMode';
 
 const App: FC = () => {
   return (
-    <Navigation />
+    <BrowserRouter>
+      <Provider store={store}>
+        <UserAuthContextProvider>
+          {navigator.onLine ? <Navigation /> : <OfflineMode />}
+        </UserAuthContextProvider>
+      </Provider>
+    </BrowserRouter>
   )
 }
-// <UserAuthContextProvider>
-
-
-{/* {navigator.onLine ? <Navigation /> : <OfflineMode />} */ }
-
-// </UserAuthContextProvider>
-// )
 
 export default App;
