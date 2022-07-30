@@ -12,17 +12,16 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <ChakraProvider portalZIndex={40}>
-      <BrowserRouter>
-        <Provider store={store}>
-          <UserAuthContextProvider>
-            <App />
-          </UserAuthContextProvider>
-        </Provider>
-      </BrowserRouter>
-    </ChakraProvider>
-
-  </React.StrictMode>
+  // <React.StrictMode>
+  <ChakraProvider portalZIndex={40}>
+    <BrowserRouter>
+      <Provider store={store}>
+        <UserAuthContextProvider>
+          <App />
+        </UserAuthContextProvider>
+      </Provider>
+    </BrowserRouter>
+  </ChakraProvider>
+  // </React.StrictMode>
 );
 

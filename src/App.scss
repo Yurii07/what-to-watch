@@ -21,6 +21,11 @@ html {
     }
 }
 
+#root {
+    background-color: red;
+    display: none;
+}
+
 body {
     font-family: $font-family;
     font-weight: 400;

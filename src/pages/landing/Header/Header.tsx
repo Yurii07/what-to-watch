@@ -2,9 +2,9 @@ import { FC } from 'react';
 import SectionPitch from '../Pitch/Pitch'
 import bgimg from '../../../assets/images/bg.jpg'
 import styled from 'styled-components';
-import Nav from '../Nav/Nav'
+import Header from 'components/header/Header';
 
-const Header = styled.header`
+const Wrapper = styled.div`
     background: linear-gradient(
                 to right,
                 rgba(0, 0, 0, 0.75), 
@@ -19,11 +19,11 @@ const Header = styled.header`
 
 const header = () => {
   return (
-    <Header>
-      <Nav />
+    <Wrapper>
+      <Header />
 
       <SectionPitch />
-    </Header>
+    </Wrapper>
   )
 }
 

@@ -1,15 +1,21 @@
 @use "../../scss/" as *;
-
+.link {
+    color:white;
+}
 .logo {
     font-size: 2.5rem;
     font-weight: 600;
-
+    display: inline-block;
+    line-height: 90px;
+    margin: 0 0 0 3%;
     @include flex(center, unset);
 
     img {
         margin-right: 10px;
         width: 50px;
-
+        width: 167px;
+        height : 45px;
+        vertical-align: middle;
         @include mobile {
             width: 30px;
             margin-right: 0;
@@ -42,6 +48,9 @@
     }
 
     &__nav {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
         @include flex(center, unset);
 
         & > * ~ * {
@@ -53,6 +62,7 @@
             font-weight: 700;
             position: relative;
             font-size: 1.5rem;
+            color: white;
 
             &::after {
                 content: "";
@@ -70,6 +80,7 @@
             &:hover::after {
                 width: 100%;
             }
+         
         }
 
         @include mobile {

@@ -1,6 +1,8 @@
 import { useState, FC } from 'react'
 import { Center } from '@chakra-ui/react';
 import './form.scss'
+import { Link } from 'react-router-dom';
+
 interface FormProps {
     title: string;
     handleClick: (email: string, pass: string) => void
@@ -13,7 +15,7 @@ const Form: FC<FormProps> = ({ title, handleClick }) => {
     return (
         <Center h="100vh">
             <div className="container-form">
-                <h1>Sign In</h1>
+                <h1>{title}</h1>
                 <div className="form-element">
                     <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
                     <label className="floating-label"
@@ -29,10 +31,8 @@ const Form: FC<FormProps> = ({ title, handleClick }) => {
                     >Password</label>
                 </div>
                 <button className="btn" onClick={() => handleClick(email, pass)}> {title}</button>
+                <Link className='link' to="/">back</Link>
             </div>
-
-
-
         </Center>
     )
 }

@@ -8,6 +8,7 @@ import Detail from '../pages/Detail';
 import { useAuth } from '../hooks/use-auth';
 import LandingHome from '../pages/landing/LandingHome'
 import { Login } from 'components/Login';
+import RegisterPage from '../pages/RegisterPage';
 // import { useUserAuth } from "../contexts/UserAuthContext";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useDispatch, useSelector } from 'react-redux';
@@ -48,7 +49,7 @@ const Navigation = () => {
     // check at page load if a user is authenticated
     useEffect(() => {
         const auth = getAuth();
-  
+
         onAuthStateChanged(auth, (userAuth) => {
             if (userAuth) {
                 // user is logged in, send the user's details to redux, store the current user in the state
@@ -67,32 +68,10 @@ const Navigation = () => {
             }
         });
     }, []);
-    //             // User is signed out
-    //             // ...
-    //             console.log('User is signed out');
-    //         }
-    //     });
-    // }, [])
-
-    // if (!user) {
-    //     return (
-    //         <Routes>
-    //             <Route
-    //                 path='/'
-    //                 exact
-    //                 element={<LandingHome />}
-    //             />
-    //             <Route
-    //                 path='/login'
-    //                 exact
-    //                 element={<Login />}
-    //             />
-    //         </Routes>
-    //     )
-    // }
 
     return (
         <>
+        
             {!isAuth ? <>
                 <Routes>
                     <Route
@@ -105,6 +84,12 @@ const Navigation = () => {
                         exact
                         element={<Login />}
                     />
+                    <Route
+                        path='/register'
+                        exact
+                        element={<RegisterPage />}
+                    />
+                    {/* <Route path="/register" element={<RegisterPage />} /> */}
                 </Routes>
 
             </> : <>
@@ -136,9 +121,6 @@ const Navigation = () => {
             </>}
 
         </>
-
-
-
     );
 }
 

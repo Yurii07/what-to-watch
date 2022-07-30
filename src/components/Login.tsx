@@ -6,9 +6,10 @@ import { useAppDispatch } from 'hooks/redux-hooks';
 import { Form } from "./form/Form";
 import styled from 'styled-components';
 import bgimg from '../assets/images/bg.jpg'
+import Header from "./header/Header";
 
 
-const Header = styled.header`
+const Wrapper = styled.div`
     background: linear-gradient(
                 to right,
                 rgba(0, 0, 0, 0.75), 
@@ -42,10 +43,10 @@ const Login = () => {
     }
     return (
         <>
-            <Header>
-                {/* <Nav /> */}
+            <Wrapper>
+                <Header />
                 <Form title="sign in" handleClick={handleLogin} />
-            </Header>
+            </Wrapper>
         </>
     )
 }
