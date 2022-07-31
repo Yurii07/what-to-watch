@@ -17,10 +17,12 @@ import { setUser, removeUser } from '../store/slices/userSlice';
 const Navigation = () => {
     const dispatch = useDispatch();
     const { isAuth } = useAuth();
+    console.log('🔥 ~ file: Navigation.jsx ~ line 20 ~ Navigation ~ isAuth', isAuth);
 
     // check at page load if a user is authenticated
     useEffect(() => {
         const auth = getAuth();
+        console.log('🔥 ~ file: Navigation.jsx ~ line 25 ~ useEffect ~ auth', auth);
 
         onAuthStateChanged(auth, (userAuth) => {
             if (userAuth) {
@@ -47,7 +49,7 @@ const Navigation = () => {
                         <Route path='/' element={<LandingHome />} />
                         <Route path='/login' element={<Login />} />
                         <Route path='/register' element={<RegisterPage />} />
-                
+
                         <Route path='*' element={<NotFound />} />
                     </Routes>
                 </> :
@@ -71,7 +73,7 @@ const Navigation = () => {
                             exact
                             element={<Home />}
                         />
-                               <Route path='*' element={<NotFound />} />
+                        <Route path='*' element={<NotFound />} />
                     </Routes>
                 </>
             }
