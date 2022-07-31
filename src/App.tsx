@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Navigation from 'config/Navigation';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { UserAuthContextProvider } from 'contexts/UserAuthContext';
 import { store } from './store'
@@ -13,7 +13,9 @@ const App: FC = () => {
     <BrowserRouter>
       <Provider store={store}>
         <UserAuthContextProvider>
-          {navigator.onLine ? <Navigation /> : <OfflineMode />}
+          <HashRouter basename="/what-to-watch/">
+            {navigator.onLine ? <Navigation /> : <OfflineMode />}
+          </HashRouter>
         </UserAuthContextProvider>
       </Provider>
     </BrowserRouter>
