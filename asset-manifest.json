@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/what-to-watch/static/css/main.a6f017b6.css",
-    "main.js": "/what-to-watch/static/js/main.e3f894eb.js",
+    "main.js": "/what-to-watch/static/js/main.980a205a.js",
     "static/media/nothing_to_see_here_naked_gun.gif": "/what-to-watch/static/media/nothing_to_see_here_naked_gun.5ee28998faca154c5c61.gif",
     "static/media/bg.jpg": "/what-to-watch/static/media/bg.b25a426713c58f98bde3.jpg",
     "static/media/logo.svg": "/what-to-watch/static/media/logo.5787551b8de42aef368c379572555ada.svg",
     "index.html": "/what-to-watch/index.html",
     "main.a6f017b6.css.map": "/what-to-watch/static/css/main.a6f017b6.css.map",
-    "main.e3f894eb.js.map": "/what-to-watch/static/js/main.e3f894eb.js.map"
+    "main.980a205a.js.map": "/what-to-watch/static/js/main.980a205a.js.map"
   },
   "entrypoints": [
     "static/css/main.a6f017b6.css",
-    "static/js/main.e3f894eb.js"
+    "static/js/main.980a205a.js"
   ]
 }
