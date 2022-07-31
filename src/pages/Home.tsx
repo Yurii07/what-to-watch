@@ -1,11 +1,6 @@
 import { FC } from 'react'
-import { useUserAuth } from 'contexts/UserAuthContext';
-import { useAppDispatch } from 'hooks/redux-hooks';
-import {  Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import { useAuth } from '../hooks/use-auth';
-import { removeUser } from '../store/slices/userSlice';
-import { getAuth, signOut } from "firebase/auth";
 import HeroSlide from 'components/hero-slide/HeroSlide';
 import Header from 'components/header/Header';
 import { OutlineButton } from 'components/button/Button';
@@ -13,21 +8,7 @@ import MovieList from 'components/movie-list/Movie-list';
 
 import { category, movieType, tvType } from '../api/tmdbApi';
 
-
 const Home: FC = () => {
-    // const { isAuth, email } = useAuth();
-    const { user } = useUserAuth();
-    // console.log('🔥 email', user.email);
-    const dispatch = useAppDispatch();
-
-    const auth = getAuth();
-    const signOutHandler = () => {
-        signOut(auth).then(() => {
-            dispatch(removeUser())
-        }).catch((error) => {
-            console.log(error, 'error');
-        });
-    }
 
     return (
         <>

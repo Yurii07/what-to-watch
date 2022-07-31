@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router';
 import './movie-grid.scss';
 
 import MovieCard from '../movie-card/Movie-card'
-import Button, { OutlineButton } from '../button/Button';
+import { OutlineButton } from '../button/Button';
 import Input from '../input/input'
 
 import tmdbApi, { category, movieType, tvType } from '../../api/tmdbApi';
@@ -68,9 +68,9 @@ const MovieGrid = props => {
 
     return (
         <>
-            {/* <div className="section mb-3"> */}
+   
             <MovieSearch category={props.category} keyword={keyword} />
-            {/* </div> */}
+        
             <div className="movie-grid">
                 {
                     items.map((item, i) => <MovieCard category={props.category} item={item} key={i} />)

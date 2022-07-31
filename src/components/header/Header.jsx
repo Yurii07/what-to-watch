@@ -52,9 +52,7 @@ const Header = () => {
     signOut(auth).then(() => {
       dispatch(removeUser())
     }).catch((error) => {
-      // An error happened.
       console.log(error, 'error');
-
     });
   }
 

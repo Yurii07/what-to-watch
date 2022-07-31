@@ -9,7 +9,7 @@ import { setUser, removeUser } from '../store/slices/userSlice';
 const LandingHome = lazy(() => import('../pages/landing/LandingHome'));
 const Login = lazy(() => import('components/Login'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage'));
-const Home = lazy(() => import('../pages/Home'));
+const Home = lazy(() => import('../pages/Home.tsx'));
 const Catalog = lazy(() => import('../pages/Catalog'));
 const NotFound = lazy(() => import('../components/NotFound/NotFound'));
 const Detail = lazy(() => import('../pages/detail/Detail'));
