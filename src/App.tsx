@@ -13,7 +13,7 @@ const App: FC = () => {
     <BrowserRouter>
       <Provider store={store}>
         <UserAuthContextProvider>
-          <HashRouter basename="/what-to-watch/">
+          <HashRouter basename="/">
             {navigator.onLine ? <Navigation /> : <OfflineMode />}
           </HashRouter>
         </UserAuthContextProvider>
