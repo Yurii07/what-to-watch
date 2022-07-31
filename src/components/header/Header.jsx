@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, FC } from 'react';
 
 import { Link, useLocation } from 'react-router-dom';
 import { useUserAuth } from 'contexts/UserAuthContext';
@@ -79,14 +79,13 @@ const Header = () => {
               ))
             }
 
-            <button onClick={signOutHandler}>log out from <br/>{user.email} </button>
+            <button className='log-out' onClick={signOutHandler}>log out from <br />{user?.email} </button>
 
           </ul> :
           <div>
-            <Link className='link' to="/login">login</Link> <br/>
+            <Link className='link' to="/login">login</Link> <br />
             <Link className='link' to="/register">register</Link>
           </div>
-
         }
 
       </div>

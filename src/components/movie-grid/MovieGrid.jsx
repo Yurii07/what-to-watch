@@ -107,6 +107,7 @@ const MovieSearch = props => {
             e.preventDefault();
             if (e.keyCode === 13) {
                 goToSearch();
+                setKeyword('')
             }
         }
         document.addEventListener('keyup', enterEvent);
@@ -123,7 +124,6 @@ const MovieSearch = props => {
                 value={keyword}
                 onChange={(e) => setKeyword(e.target.value)}
             />
-            <Button className="button-search" onClick={goToSearch}>Search</Button>
         </div>
     )
 }

@@ -20,15 +20,6 @@ const Home: FC = () => {
     // console.log('🔥 email', user.email);
     const dispatch = useAppDispatch();
 
-    // return isAuth ? (
-    // <div>Welcome
-    //     <button onClick={() => dispatch(removeUser())}>log out from {user.email} </button>
-    // </div>
-    // ) : (
-    //     <Routes>
-    //         <Route path="/" element={<Navigate replace to="/login" />} />
-    //     </Routes>
-    // )
     const auth = getAuth();
     const signOutHandler = () => {
         signOut(auth).then(() => {

@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Footer: FC = () => (
   <FooterContainer>
     <span style={{ marginLeft: "15%", fontSize: "1.25rem" }}>
-      Questions? <Link to="#"> Call 1-877-742-1335</Link>
+      Questions? <Link to="#"> Call 063-153-02-12 Yurii </Link>
     </span>
     <div className="footer-columns">
       <ul>

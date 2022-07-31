@@ -1,32 +1,28 @@
-import { useEffect } from 'react';
+import { useEffect, Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import Home from '../pages/Home';
-import Catalog from '../pages/Catalog';
-import NotFound from '../components/NotFound/NotFound'
-import Detail from '../pages/detail/Detail';
 import { useAuth } from '../hooks/use-auth';
-import LandingHome from '../pages/landing/LandingHome'
-import { Login } from 'components/Login';
-import RegisterPage from '../pages/RegisterPage';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from 'react-redux';
 import { setUser, removeUser } from '../store/slices/userSlice';
 
+const LandingHome = lazy(() => import('../pages/landing/LandingHome'));
+const Login = lazy(() => import('components/Login'));
+const RegisterPage = lazy(() => import('../pages/RegisterPage'));
+const Home = lazy(() => import('../pages/Home'));
+const Catalog = lazy(() => import('../pages/Catalog'));
+const NotFound = lazy(() => import('../components/NotFound/NotFound'));
+const Detail = lazy(() => import('../pages/detail/Detail'));
 
 const Navigation = () => {
     const dispatch = useDispatch();
     const { isAuth } = useAuth();
-    console.log('🔥 ~ file: Navigation.jsx ~ line 20 ~ Navigation ~ isAuth', isAuth);
 
-    // check at page load if a user is authenticated
     useEffect(() => {
         const auth = getAuth();
-        console.log('🔥 ~ file: Navigation.jsx ~ line 25 ~ useEffect ~ auth', auth);
 
         onAuthStateChanged(auth, (userAuth) => {
             if (userAuth) {
-                // user is logged in, send the user's details to redux, store the current user in the state
 
                 dispatch(
                     setUser({
@@ -44,7 +40,7 @@ const Navigation = () => {
     return (
         <>
             {!isAuth ?
-                <>
+                <Suspense fallback={<>Loading...</>}>
                     <Routes>
                         <Route path='/' element={<LandingHome />} />
                         <Route path='/login' element={<Login />} />
@@ -52,10 +48,15 @@ const Navigation = () => {
 
                         <Route path='*' element={<NotFound />} />
                     </Routes>
-                </> :
-                <>
+                </Suspense>
+                :
+                <Suspense fallback={<>Loading...</>}>
                     <Routes>
-
+                    <Route
+                            path='/'
+                            exact
+                            element={<Home />}
+                        />
                         <Route
                             path='/:category/search/:keyword'
                             element={<Catalog />}
@@ -68,14 +69,10 @@ const Navigation = () => {
                             path='/:category'
                             element={<Catalog />}
                         />
-                        <Route
-                            path='/'
-                            exact
-                            element={<Home />}
-                        />
+                   
                         <Route path='*' element={<NotFound />} />
                     </Routes>
-                </>
+                </Suspense>
             }
 
         </>
