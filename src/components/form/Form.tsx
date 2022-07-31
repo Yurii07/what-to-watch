@@ -1,7 +1,7 @@
-import { useState, FC } from 'react'
+import { useState, FC, ChangeEvent } from 'react'
 import { Center } from '@chakra-ui/react';
-import './form.scss'
 import { Link } from 'react-router-dom';
+import './form.scss'
 
 interface FormProps {
     title: string;
@@ -9,23 +9,39 @@ interface FormProps {
 }
 
 const Form: FC<FormProps> = ({ title, handleClick }) => {
-    const [email, setEmail] = useState('')
+    const [email, setEmail] = useState<string>('')
     const [pass, setPass] = useState('')
+    const [error, setError] = useState<string | null>(null);
+
+    function isValidEmail(email: string) {
+        return /\S+@\S+\.\S+/.test(email);
+    }
+
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        if (!isValidEmail(event.target.value)) {
+            setError('Email is invalid');
+        } else {
+            setError(null);
+        }
+        setEmail(event.target.value);
+    };
 
     return (
         <Center h="100vh">
             <div className="container-form">
                 <h1>{title}</h1>
                 <div className="form-element">
-                    <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                    <input type="email" name="email" id="email" value={email} onChange={handleChange} required />
                     <label className="floating-label"
                         htmlFor="email"
                     >Email</label>
+
+                    {error && <h2 style={{ color: 'red' }}>{error}</h2>}
                 </div>
                 <div className="form-element">
                     <input type="password" name="password" id="password" value={pass}
                         onChange={(e) => setPass(e.target.value)}
-                        placeholder="password" required />
+                        required />
                     <label className="floating-label"
                         htmlFor="password"
                     >Password</label>
