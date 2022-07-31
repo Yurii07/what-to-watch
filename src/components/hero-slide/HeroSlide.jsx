@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import SwiperCore, { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useNavigate } from 'react-router-dom';
 
 import Button, { OutlineButton } from '../button/Button';
 import Modal, { ModalContent } from '../modal/Modal';
@@ -12,7 +13,6 @@ import apiConfig from '../../api/apiConfig';
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import './hero-slide.scss';
-import { useNavigate } from 'react-router-dom';
 
 const HeroSlide = () => {
 
@@ -41,7 +41,8 @@ const HeroSlide = () => {
                 grabCursor={true}
                 spaceBetween={0}
                 slidesPerView={1}
-            // autoplay={{delay: 3000}}
+                autoplay={{ delay: 3000 }}
+
             >
                 {
                     movieItems.map((item, i) => (

@@ -7,9 +7,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   // <React.StrictMode>
-  <ChakraProvider portalZIndex={40}>
-    <App />
-  </ChakraProvider>
+  // <ChakraProvider portalZIndex={40}>
+  <App />
+  // </ChakraProvider>
   // </React.StrictMode>
 );
 

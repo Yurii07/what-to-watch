@@ -75,7 +75,7 @@ export default Footer;
 
 const FooterContainer = styled.div`
   background: #000;
-  padding-top: 10rem;
+  padding-top: 5rem;
   padding-bottom: 3rem;
   color: #999;
 

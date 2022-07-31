@@ -11,7 +11,7 @@ import apiConfig from '../../api/apiConfig';
 
 const MovieCard = props => {
 
-    const item  = props.item;
+    const item = props.item;
 
     const link = '/' + category[props.category] + '/' + item.id;
 
@@ -19,9 +19,9 @@ const MovieCard = props => {
 
     return (
         <Link to={link}>
-            <div className="movie-card" style={{backgroundImage: `url(${bg})`}}>
+            <div className="movie-card" style={{ backgroundImage: `url(${bg})` }}>
                 <Button>
-                    <i className="bx bx-play"></i>
+                    <i className="bx bx-play">Play</i>
                 </Button>
             </div>
             <h3>{item.title || item.name}</h3>

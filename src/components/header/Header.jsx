@@ -79,7 +79,7 @@ const Header = () => {
               ))
             }
 
-            <button onClick={signOutHandler}>log out from {user.email} </button>
+            <button onClick={signOutHandler}>log out from <br/>{user.email} </button>
 
           </ul> :
           <div>

@@ -6,6 +6,8 @@ import { UserAuthContextProvider } from 'contexts/UserAuthContext';
 import { store } from './store'
 import OfflineMode from 'components/OfflineMode';
 
+import 'App.scss'
+
 const App: FC = () => {
   return (
     <BrowserRouter>

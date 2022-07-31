@@ -34,9 +34,7 @@ const Home: FC = () => {
         signOut(auth).then(() => {
             dispatch(removeUser())
         }).catch((error) => {
-            // An error happened.
             console.log(error, 'error');
-
         });
     }
 
@@ -44,11 +42,6 @@ const Home: FC = () => {
         <>
             <Header />
             <HeroSlide />
-            <div>Welcome
-                <button onClick={signOutHandler}>log out from
-                    {user?.email}
-                </button>
-            </div>
             <div className='container'>
                 <div className="section mb-3">
                     <div className="section__header mb-2">
