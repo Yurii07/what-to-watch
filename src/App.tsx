@@ -10,7 +10,7 @@ import 'App.scss'
 
 const App: FC = () => {
   return (
-    <BrowserRouter basename='/what-to-watch/'>
+    <BrowserRouter basename='/'>
       <Provider store={store}>
         <UserAuthContextProvider>
           {navigator.onLine ? <Navigation /> : <OfflineMode />}
