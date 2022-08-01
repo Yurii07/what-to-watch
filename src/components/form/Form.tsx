@@ -1,5 +1,4 @@
 import { useState, FC, ChangeEvent } from 'react'
-import { Center } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import './form.scss'
 
@@ -27,7 +26,7 @@ const Form: FC<FormProps> = ({ title, handleClick }) => {
     };
 
     return (
-        <Center h="100vh">
+        <div style={{ height: '100vh' }}>
             <div className="container-form">
                 <h1>{title}</h1>
                 <div className="form-element">
@@ -49,7 +48,7 @@ const Form: FC<FormProps> = ({ title, handleClick }) => {
                 <button className="btn" onClick={() => handleClick(email, pass)}> {title}</button>
                 <Link className='link' to="/">back</Link>
             </div>
-        </Center>
+        </div>
     )
 }
 
