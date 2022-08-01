@@ -10,7 +10,7 @@ import 'App.scss'
 
 const App: FC = () => {
   return (
-    <BrowserRouter basename='/'>
+    <BrowserRouter basename='https://whattowatchdeploy.herokuapp.com/'>
       <Provider store={store}>
         <UserAuthContextProvider>
           {navigator.onLine ? <Navigation /> : <OfflineMode />}
